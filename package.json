@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/lasogno/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/lasogno/frontend-project-lvl2/actions)",
   "bin": {
-    "gendiff": "bin/gendiff"
+    "gendiff": "bin/gendiff.js"
   },
   "main": "index.js",
   "type": "module",
@@ -24,5 +24,8 @@
     "eslint": "^8.18.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "commander": "^9.3.0"
   }
 }
