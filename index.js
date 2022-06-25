@@ -2,15 +2,15 @@ import path from 'path';
 import { readFileSync } from 'fs';
 import _ from 'lodash';
 
-const getDiffs = (file1, file2) => {
-  const normalized1 = readFileSync(path.resolve(process.cwd(), file1));
-  const normalized2 = readFileSync(path.resolve(process.cwd(), file2));
+const normalize = (file) => {
+  const fullPath = readFileSync(path.resolve(process.cwd(), file));
+  return JSON.parse(fullPath);
+};
 
-  const obj1 = JSON.parse(normalized1);
-  const obj2 = JSON.parse(normalized2);
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  const allKeys = [...keys1, ...keys2];
+const getDiffs = (file1, file2) => {
+  const obj1 = normalize(file1);
+  const obj2 = normalize(file2);
+  const allKeys = [...Object.keys(obj1), ...Object.keys(obj2)];
   const sorted = _.sortBy(allKeys);
   const uniq = _.uniq(sorted);
   const result = uniq.reduce((acc, key) => {
