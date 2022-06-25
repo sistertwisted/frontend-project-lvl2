@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-underscore-dangle */
 import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
