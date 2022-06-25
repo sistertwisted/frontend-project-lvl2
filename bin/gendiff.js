@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 
 import { Command } from 'commander';
