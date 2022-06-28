@@ -1,15 +1,10 @@
-import path from 'path';
-import { readFileSync } from 'fs';
+/* eslint-disable import/extensions */
 import _ from 'lodash';
+import parsing from './parser.js';
 
-const normalize = (file) => {
-  const fullPath = readFileSync(path.resolve(process.cwd(), file));
-  return JSON.parse(fullPath);
-};
-
-const getDiffs = (file1, file2) => {
-  const obj1 = normalize(file1);
-  const obj2 = normalize(file2);
+const getDiffs = (path1, path2) => {
+  const obj1 = parsing(path1);
+  const obj2 = parsing(path2);
   const allKeys = [...Object.keys(obj1), ...Object.keys(obj2)];
   const sorted = _.sortBy(allKeys);
   const uniq = _.uniq(sorted);
