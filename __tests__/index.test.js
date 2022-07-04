@@ -13,8 +13,8 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 const test1 = readFile('result.txt');
 const test2 = readFile('resultPlain.txt');
-const file1 = getFixturePath('before.json');
-const file2 = getFixturePath('after.json');
+const file1 = getFixturePath('before.yaml');
+const file2 = getFixturePath('after.yml');
 const test3 = readFile('resultJSON.txt');
 
 test('testing getdiffs stylish', () => {

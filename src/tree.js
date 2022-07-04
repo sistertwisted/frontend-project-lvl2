@@ -5,10 +5,10 @@ const getTree = (obj1, obj2) => {
   const allKeys = _.union(Object.keys(obj1), Object.keys(obj2));
   const sorted = _.sortBy(allKeys);
   const result = sorted.map((key) => {
-    if (Object.hasOwn(obj1, key) && !Object.hasOwn(obj2, key)) {
+    if (_.has(obj1, key) && !_.has(obj2, key)) {
       return { key, type: 'deleted', value: obj1[key] };
     }
-    if (!Object.hasOwn(obj1, key) && Object.hasOwn(obj2, key)) {
+    if (!_.has(obj1, key) && _.has(obj2, key)) {
       return { key, type: 'added', value: obj2[key] };
     }
     if (_.isEqual(obj1[key], obj2[key])) {
