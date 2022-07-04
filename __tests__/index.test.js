@@ -12,9 +12,14 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const test1 = readFile('result');
+const test2 = readFile('resultPlain');
+const file1 = getFixturePath('before.json');
+const file2 = getFixturePath('after.json');
 
 test('testing getdiffs stylish', () => {
-  const file1 = getFixturePath('before.json');
-  const file2 = getFixturePath('after.json');
-  expect(getDiffs(file1, file2)).toEqual(test1);
+  expect(getDiffs(file1, file2, 'stylish')).toEqual(test1);
+});
+
+test('testing getdiffs plain', () => {
+  expect(getDiffs(file1, file2, 'plain')).toEqual(test2);
 });
