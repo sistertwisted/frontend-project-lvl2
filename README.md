@@ -12,3 +12,5 @@ Step 6: nested YAML and JSON files, stylish
 [![asciicast](https://asciinema.org/a/h5yNSDvnDWG181IAdfgVvSHp2.svg)](https://asciinema.org/a/h5yNSDvnDWG181IAdfgVvSHp2)
 Step 7: plain formatter
 [![asciicast](https://asciinema.org/a/VqEqiclr1mAK2S0HisJBLew8l.svg)](https://asciinema.org/a/VqEqiclr1mAK2S0HisJBLew8l)
+Step 8: json formatter
+[![asciicast](https://asciinema.org/a/HqqQdxRLKMoaK33B0KN0CWK7s.svg)](https://asciinema.org/a/HqqQdxRLKMoaK33B0KN0CWK7s)

@@ -2,12 +2,14 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
 
-const chooseFormatter = (formatName) => {
+const chooseFormatter = (innerTree, formatName) => {
   switch (formatName) {
     case 'stylish':
-      return stylish;
+      return stylish(innerTree);
     case 'plain':
-      return plain;
+      return plain(innerTree);
+    case 'json':
+      return JSON.stringify(innerTree);
     default:
       throw new Error(`Unknown type: ${formatName}`);
   }

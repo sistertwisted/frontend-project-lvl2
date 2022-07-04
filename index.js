@@ -7,9 +7,8 @@ const getDiffs = (path1, path2, formatName = 'stylish') => {
   const obj1 = parsing(path1);
   const obj2 = parsing(path2);
   const tree = getTree(obj1, obj2);
-  const formatter = chooseFormatter(formatName);
 
-  return formatter(tree);
+  return chooseFormatter(tree, formatName);
 };
 
 export default getDiffs;
